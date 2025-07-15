@@ -1,0 +1,112 @@
+<div class="enable-product-container">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" opened class="sidenav">
+      <!-- Logo -->
+      <div class="logo-container">
+        <img src="/assets/liberty-logo.png" alt="Liberty Insurance" class="logo">
+      </div>
+      
+      <!-- Navigation Menu -->
+      <mat-nav-list class="nav-list">
+        <mat-list-item *ngFor="let item of menuItems" 
+                       [class.active]="item.active"
+                       [routerLink]="item.route">
+          <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+          <span matListItemTitle>{{item.label}}</span>
+        </mat-list-item>
+      </mat-nav-list>
+      
+      <!-- Bottom Menu Items -->
+      <div class="bottom-menu">
+        <mat-list-item>
+          <mat-icon matListItemIcon>help</mat-icon>
+          <span matListItemTitle>Help</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>logout</mat-icon>
+          <span matListItemTitle>Log out</span>
+        </mat-list-item>
+      </div>
+    </mat-sidenav>
+    
+    <mat-sidenav-content class="content">
+      <!-- Header -->
+      <div class="header">
+        <div class="header-content">
+          <mat-icon class="header-icon">inventory</mat-icon>
+          <h1>Enable Product</h1>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="description">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        </div>
+        
+        <mat-card class="form-card">
+          <mat-card-content>
+            <form [formGroup]="enableProductForm" class="enable-form">
+              <div class="form-row">
+                <!-- Product Code -->
+                <mat-form-field appearance="outline" class="form-field">
+                  <mat-label>Product Code</mat-label>
+                  <mat-select formControlName="productCode" placeholder="Select Product Code">
+                    <mat-option *ngFor="let code of productCodes" [value]="code.value">
+                      {{code.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                
+                <!-- Product Description -->
+                <mat-form-field appearance="outline" class="form-field">
+                  <mat-label>Product Description</mat-label>
+                  <input matInput formControlName="productDescription" placeholder="Enter Product Description">
+                </mat-form-field>
+              </div>
+              
+              <!-- Product Brief -->
+              <mat-form-field appearance="outline" class="form-field-full">
+                <mat-label>Product Brief</mat-label>
+                <textarea matInput 
+                         formControlName="productBrief" 
+                         placeholder="Enter Product Brief"
+                         rows="6"></textarea>
+              </mat-form-field>
+              
+              <!-- Terms and Conditions -->
+              <div class="terms-section">
+                <mat-checkbox formControlName="agreeToTerms">
+                  I agree to <a href="#" class="terms-link">Terms and Conditions</a>
+                </mat-checkbox>
+              </div>
+              
+              <!-- Action Buttons -->
+              <div class="button-section">
+                <button mat-raised-button 
+                        color="primary" 
+                        class="enable-button"
+                        type="button"
+                        (click)="onEnable()">
+                  Enable
+                </button>
+                <button mat-raised-button 
+                        class="disable-button"
+                        type="button"
+                        (click)="onDisable()">
+                  Disable
+                </button>
+                <button mat-raised-button 
+                        class="reset-button"
+                        type="button"
+                        (click)="onReset()">
+                  Reset
+                </button>
+              </div>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

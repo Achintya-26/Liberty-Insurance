@@ -1,0 +1,108 @@
+<div class="dashboard-container">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" opened class="sidenav">
+      <!-- Logo -->
+      <div class="logo-container">
+        <img src="/assets/liberty-logo.png" alt="Liberty Insurance" class="logo">
+      </div>
+      
+      <!-- Navigation Menu -->
+      <mat-nav-list class="nav-list">
+        <mat-list-item *ngFor="let item of menuItems" 
+                       [class.active]="item.active"
+                       [routerLink]="item.route">
+          <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+          <span matListItemTitle>{{item.label}}</span>
+        </mat-list-item>
+      </mat-nav-list>
+      
+      <!-- Bottom Menu Items -->
+      <div class="bottom-menu">
+        <mat-list-item>
+          <mat-icon matListItemIcon>help</mat-icon>
+          <span matListItemTitle>Help</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>logout</mat-icon>
+          <span matListItemTitle>Log out</span>
+        </mat-list-item>
+      </div>
+    </mat-sidenav>
+    
+    <mat-sidenav-content class="content">
+      <!-- Header -->
+      <div class="header">
+        <div class="header-content">
+          <mat-icon class="header-icon">dashboard</mat-icon>
+          <h1>Dashboard</h1>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="main-content">
+        <mat-card class="products-card">
+          <mat-card-header>
+            <div class="card-header-content">
+              <mat-card-title>Products Enabled</mat-card-title>
+              <mat-form-field appearance="outline" class="month-selector">
+                <mat-select value="october">
+                  <mat-option value="october">October</mat-option>
+                  <mat-option value="november">November</mat-option>
+                  <mat-option value="december">December</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </mat-card-header>
+          
+          <mat-card-content>
+            <table mat-table [dataSource]="dataSource" class="products-table">
+              <!-- Product Name Column -->
+              <ng-container matColumnDef="productName">
+                <th mat-header-cell *matHeaderCellDef>Product Name</th>
+                <td mat-cell *matCellDef="let element">
+                  <div class="product-cell">
+                    <img src="/assets/apple-watch.png" alt="Product" class="product-image">
+                    {{element.productName}}
+                  </div>
+                </td>
+              </ng-container>
+              
+              <!-- Product Feature Column -->
+              <ng-container matColumnDef="productFeature">
+                <th mat-header-cell *matHeaderCellDef>Product Feature</th>
+                <td mat-cell *matCellDef="let element">{{element.productFeature}}</td>
+              </ng-container>
+              
+              <!-- Date Column -->
+              <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef>Date</th>
+                <td mat-cell *matCellDef="let element">{{element.date}}</td>
+              </ng-container>
+              
+              <!-- Status Column -->
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <td mat-cell *matCellDef="let element">
+                  <mat-chip [class]="getStatusClass(element.status)">
+                    {{element.status}}
+                  </mat-chip>
+                </td>
+              </ng-container>
+              
+              <!-- Action Column -->
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let element">
+                  <button mat-raised-button class="edit-button">{{element.action}}</button>
+                </td>
+              </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

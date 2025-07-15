@@ -1,0 +1,183 @@
+.create-block-container {
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 280px;
+  background-color: white;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-container {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.nav-list {
+  flex: 1;
+  padding-top: 20px;
+}
+
+.nav-list mat-list-item {
+  margin: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: #f5f5f5;
+  }
+  
+  &.active {
+    background-color: #fff3cd;
+    color: #856404;
+    
+    mat-icon {
+      color: #856404;
+    }
+  }
+}
+
+.bottom-menu {
+  border-top: 1px solid #e0e0e0;
+  padding: 16px 0;
+}
+
+.bottom-menu mat-list-item {
+  margin: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+.content {
+  background-color: #f8f9fa;
+}
+
+.header {
+  background-color: white;
+  padding: 20px 32px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-icon {
+  color: #ffc107;
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+
+.main-content {
+  padding: 32px;
+}
+
+.description {
+  margin-bottom: 24px;
+  
+  p {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+.form-card {
+  background-color: #fff8e1;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+}
+
+.create-form {
+  width: 100%;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-field {
+  width: 100%;
+}
+
+.form-field-full {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.info-icon {
+  color: #666;
+  cursor: help;
+}
+
+.where-clause-textarea {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #333;
+}
+
+.button-section {
+  display: flex;
+  justify-content: center;
+}
+
+.map-button {
+  background-color: #2c387e;
+  color: white;
+  padding: 12px 32px;
+  font-weight: 500;
+  border-radius: 8px;
+  min-width: 200px;
+  
+  &:hover {
+    background-color: #1f2761;
+  }
+}
+
+// Material form field customization
+.mat-mdc-form-field {
+  .mat-mdc-text-field-wrapper {
+    background-color: white;
+  }
+}
+
+.mat-mdc-select-panel {
+  background-color: white;
+}

@@ -1,0 +1,17 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Liberty torch icon -->
+  <g transform="translate(10, 10)">
+    <!-- Torch base -->
+    <rect x="15" y="35" width="10" height="15" fill="#2C387E"/>
+    <!-- Torch handle -->
+    <rect x="17" y="30" width="6" height="20" fill="#8B6914"/>
+    <!-- Flame -->
+    <path d="M12,30 Q20,15 28,30 Q25,20 20,25 Q15,20 12,30" fill="#FF6B35"/>
+    <!-- Statue base -->
+    <rect x="0" y="40" width="40" height="10" fill="#4A4A4A"/>
+  </g>
+  
+  <!-- Liberty Insurance text -->
+  <text x="65" y="25" font-family="serif" font-size="18" font-weight="bold" fill="#2C387E">Liberty</text>
+  <text x="65" y="45" font-family="serif" font-size="14" fill="#2C387E">Insurance.</text>
+</svg>
