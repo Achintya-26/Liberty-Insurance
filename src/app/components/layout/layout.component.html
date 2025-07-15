@@ -1,0 +1,12 @@
+<div class="layout-container">
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav mode="side" opened class="sidenav">
+            <app-sidebar [currentRoute]="currentRoute"></app-sidebar>
+        </mat-sidenav>
+
+        <!-- Main Content -->
+        <mat-sidenav-content class="content">
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

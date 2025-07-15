@@ -6,10 +6,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
 
 export interface ProductData {
   productName: string;
@@ -30,10 +27,7 @@ export interface ProductData {
     MatChipsModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    RouterModule
+    MatIconModule
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
@@ -63,12 +57,6 @@ export class DashboardComponent {
       status: 'Disabled',
       action: 'Edit Product'
     }
-  ];
-
-  menuItems = [
-    { label: 'Dashboard', icon: 'dashboard', route: '/dashboard', active: true },
-    { label: 'Enable Product', icon: 'inventory', route: '/enable-product', active: false },
-    { label: 'Create Block', icon: 'create', route: '/create-block', active: false }
   ];
 
   getStatusClass(status: string): string {

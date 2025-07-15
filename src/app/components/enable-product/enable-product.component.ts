@@ -7,10 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-enable-product',
@@ -24,22 +21,13 @@ import { RouterModule } from '@angular/router';
     MatInputModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    RouterModule
+    MatIconModule
   ],
   templateUrl: './enable-product.component.html',
   styleUrls: ['./enable-product.component.scss']
 })
 export class EnableProductComponent {
   enableProductForm: FormGroup;
-
-  menuItems = [
-    { label: 'Dashboard', icon: 'dashboard', route: '/dashboard', active: false },
-    { label: 'Enable Product', icon: 'inventory', route: '/enable-product', active: true },
-    { label: 'Create Block', icon: 'create', route: '/create-block', active: false }
-  ];
 
   productCodes = [
     { value: 'PROD001', viewValue: 'Product Code 001' },

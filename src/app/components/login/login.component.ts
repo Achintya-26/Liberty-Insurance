@@ -37,7 +37,7 @@ export class LoginComponent {
   onLogin() {
     if (this.loginForm.valid) {
       // Simulate login success
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/app/dashboard']);
     }
   }
 

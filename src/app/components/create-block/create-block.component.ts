@@ -6,10 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-create-block',
@@ -22,22 +19,13 @@ import { RouterModule } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    RouterModule
+    MatIconModule
   ],
   templateUrl: './create-block.component.html',
   styleUrls: ['./create-block.component.scss']
 })
 export class CreateBlockComponent {
   createBlockForm: FormGroup;
-
-  menuItems = [
-    { label: 'Dashboard', icon: 'dashboard', route: '/dashboard', active: false },
-    { label: 'Enable Product', icon: 'inventory', route: '/enable-product', active: false },
-    { label: 'Create Block', icon: 'create', route: '/create-block', active: true }
-  ];
 
   products = [
     { value: 'apple-watch', viewValue: 'Apple Watch' },
