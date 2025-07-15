@@ -18,7 +18,7 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   min-height: 600px;
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     max-width: 400px;
@@ -32,7 +32,7 @@
   justify-content: center;
   padding: 40px;
   position: relative;
-  
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -55,7 +55,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+
   @media (max-width: 768px) {
     padding: 20px;
   }
@@ -64,7 +64,7 @@
 .logo-container {
   text-align: right;
   margin-bottom: 40px;
-  
+
   @media (max-width: 768px) {
     text-align: center;
   }
@@ -87,7 +87,7 @@
   color: #333;
   margin-bottom: 32px;
   text-align: left;
-  
+
   @media (max-width: 768px) {
     text-align: center;
     font-size: 20px;
@@ -101,7 +101,7 @@
 .form-field {
   width: 100%;
   margin-bottom: 16px;
-  
+
   .mat-mdc-text-field-wrapper {
     background-color: #f8f9fa;
   }
@@ -126,7 +126,7 @@
   color: #666;
   text-decoration: none;
   font-size: 14px;
-  
+
   &:hover {
     color: #333;
     text-decoration: underline;
@@ -142,11 +142,11 @@
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 20px;
-  
+
   &:hover {
     background-color: #ffca2c;
   }
-  
+
   &:disabled {
     background-color: #e9ecef;
     color: #6c757d;
@@ -157,7 +157,7 @@
   text-align: center;
   margin: 20px 0;
   position: relative;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -167,7 +167,7 @@
     height: 1px;
     background-color: #e9ecef;
   }
-  
+
   span {
     background-color: white;
     padding: 0 16px;
@@ -185,27 +185,33 @@
   padding: 12px;
   border: 2px solid #e9ecef;
   border-radius: 8px;
-  
+
   &:hover {
     background-color: #f8f9fa;
     border-color: #ddd;
   }
 }
 
+input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear {
+  display: none;
+}
+
 // Material form field customization
 ::ng-deep {
+
   .mat-mdc-form-field-outline {
     color: #e9ecef;
   }
-  
+
   .mat-mdc-form-field-focus-overlay {
     background-color: transparent;
   }
-  
+
   .mat-mdc-form-field.mat-focused .mat-mdc-form-field-outline-thick {
     color: #ffc107;
   }
-  
+
   .mat-mdc-form-field.mat-focused .mat-mdc-floating-label {
     color: #ffc107;
   }
