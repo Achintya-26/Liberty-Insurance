@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -35,7 +36,7 @@ export class EnableProductComponent {
     { value: 'PROD003', viewValue: 'Product Code 003' }
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.enableProductForm = this.fb.group({
       productCode: ['', Validators.required],
       productDescription: ['', Validators.required],
@@ -47,6 +48,8 @@ export class EnableProductComponent {
   onEnable() {
     if (this.enableProductForm.valid) {
       console.log('Form submitted:', this.enableProductForm.value);
+      // Redirect to Create Block page after successful form submission
+      this.router.navigate(['/app/create-block']);
     } else {
       console.log('Form is invalid');
     }

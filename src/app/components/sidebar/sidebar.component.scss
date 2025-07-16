@@ -1,12 +1,24 @@
 .logo-container {
   padding: 20px;
   text-align: center;
-  border-bottom: 1px solid #e0e0e0;
+  overflow:hidden;
+
+  // border-bottom: 1px solid #e0e0e0;
 }
 
 .logo {
-  max-width: 150px;
-  height: auto;
+  max-width: 250px;
+  max-height: 100px;
+  transition: transform 0.3s ease;
+  // overflow:hidden;
+  // object-fit: fill;  
+  // border-radius: 50%;
+  scale: 2.0;
+  translate:30%;
+  &:hover {
+    transform: scale(1.05);
+  }
+
 }
 
 .nav-list {

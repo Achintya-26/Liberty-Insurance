@@ -12,7 +12,8 @@
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
   </div>
   
-  <mat-card class="form-card">
+  <!-- Create Block Form -->
+  <mat-card class="form-card" *ngIf="!showMapSection">
     <mat-card-content>
       <form [formGroup]="createBlockForm" class="create-form">
         <div class="form-row">
@@ -69,6 +70,113 @@
                   type="button"
                   (click)="onMapBlockAndField()">
             Map Block and Field
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Map Block and Field Form -->
+  <mat-card class="form-card" *ngIf="showMapSection">
+    <mat-card-header>
+      <mat-card-title class="map-section-title">Map Block and Field</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="mapBlockForm" class="map-form">
+        <div class="form-row">
+          <!-- Select Product -->
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Select Product</mat-label>
+            <mat-select formControlName="selectProduct">
+              <mat-option *ngFor="let product of products" [value]="product.value">
+                {{product.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+          <!-- Serial Number -->
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Serial Number</mat-label>
+            <input matInput formControlName="serialNumber" placeholder="Enter Serial Number">
+          </mat-form-field>
+        </div>
+        
+        <div class="form-row">
+          <!-- Api Tag Name -->
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Api Tag Name</mat-label>
+            <mat-select formControlName="apiTagName" placeholder="Select Section">
+              <mat-option *ngFor="let section of sections" [value]="section.value">
+                {{section.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+          <!-- Map data element -->
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Map data element</mat-label>
+            <input matInput formControlName="mapDataElement" placeholder="Enter Sequence">
+          </mat-form-field>
+        </div>
+        
+        <div class="form-row">
+          <!-- Table From -->
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Table From</mat-label>
+            <mat-select formControlName="tableFrom" placeholder="Select Table From">
+              <mat-option *ngFor="let table of tables" [value]="table.value">
+                {{table.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+          <!-- Table To -->
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Table To</mat-label>
+            <mat-select formControlName="tableTo" placeholder="Select Table To">
+              <mat-option *ngFor="let table of tables" [value]="table.value">
+                {{table.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        
+        <div class="form-row">
+          <!-- Field From -->
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Field From</mat-label>
+            <mat-select formControlName="fieldFrom" placeholder="Select Field From">
+              <mat-option *ngFor="let field of fields" [value]="field.value">
+                {{field.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+          <!-- Field To -->
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Field To</mat-label>
+            <mat-select formControlName="fieldTo" placeholder="Select Field To">
+              <mat-option *ngFor="let field of fields" [value]="field.value">
+                {{field.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="button-section">
+          <button mat-raised-button 
+                  class="back-button"
+                  type="button"
+                  (click)="onBackToCreateBlock()">
+            Back
+          </button>
+          <button mat-raised-button 
+                  color="primary" 
+                  class="submit-button"
+                  type="button"
+                  (click)="onSubmitMapping()">
+            Submit
           </button>
         </div>
       </form>

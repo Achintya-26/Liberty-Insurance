@@ -7,6 +7,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 export interface ProductData {
   productName: string;
@@ -33,6 +34,7 @@ export interface ProductData {
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
+  constructor(private router: Router) {}
   displayedColumns: string[] = ['productName', 'productFeature', 'date', 'status', 'action'];
   
   dataSource: ProductData[] = [
@@ -59,6 +61,10 @@ export class DashboardComponent {
     }
   ];
 
+  onEdit(element: ProductData) {
+    let showMap: Boolean = true;
+    this.router.navigate(['/app/create-block'], {state: {showMap}});
+  }
   getStatusClass(status: string): string {
     switch (status.toLowerCase()) {
       case 'delivered':
